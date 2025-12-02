@@ -1,5 +1,7 @@
 # ⚙️💬 AI Chat API — FastAPI + Strands Agents + Ollama
 
+![AI Chat API](./IMGs/AI_Chat_IMG.png)
+
 Este projeto implementa uma API de chat utilizando FastAPI, integrada a um Agente de IA local desenvolvido com o Strands Agents SDK e executado com modelos LLM via Ollama.
 
 A aplicação fornece um endpoint de conversação com inteligência artificial, suporte a ferramentas personalizadas e arquitetura enxuta para uso local ou integração com sistemas maiores.
