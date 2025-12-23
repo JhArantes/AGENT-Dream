@@ -4,20 +4,16 @@ import math
 @tool
 def calcular(expressao: str) -> float:
     """
-    Executa cálculos matemáticos com segurança.
-    Suporta operações e funções do módulo math.
+    Avalia uma expressão matemática.
+    Exemplo: "2 + 2 * 5" ou "math.sqrt(144)"
     """
     try:
-        # Ambiente seguro com funções do math
-        permitido = {k: getattr(math, k) for k in dir(math) if not k.startswith("_")}
-        
-        # Remove acesso a builtins
-        permitido["__builtins__"] = {}
+        # escopo seguro
+        allowed_names = {
+            "math": math
+        }
 
-        # Executa expressões matemáticas safely
-        resultado = eval(expressao, permitido, {})
-        
-        return resultado
+        return eval(expressao, {"__builtins__": {}}, allowed_names)
 
     except Exception as e:
-        return f"Erro ao calcular: {str(e)}"
+        return f"Erro ao calcular: {e}"

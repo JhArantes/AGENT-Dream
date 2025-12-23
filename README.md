@@ -1,52 +1,121 @@
+
+
+
 # ⚙️💬 AI Chat API — FastAPI + Strands Agents + Ollama
 
-![AI Chat API](./IMGs/AI_Chat_IMG.png)
+<div align="center">
 
-Este projeto implementa uma API de chat utilizando FastAPI, integrada a um Agente de IA local desenvolvido com o Strands Agents SDK e executado com modelos LLM via Ollama.
+![AI Chat API](IMGs/AI_Chat_IMG.png)
 
-A aplicação fornece um endpoint de conversação com inteligência artificial, suporte a ferramentas personalizadas e arquitetura enxuta para uso local ou integração com sistemas maiores.
+**API de Chat Inteligente com Agentes Locais e Ferramentas Personalizadas**
 
-O agente possui:
-- Conversação geral
-- Tool personalizada para cálculos matemáticos
-- Integração com FastAPI
+[![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)](https://www.python.org/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.104+-green.svg)](https://fastapi.tiangolo.com/)
+[![Ollama](https://img.shields.io/badge/Ollama-Local%20LLM-orange.svg)](https://ollama.com/)
+[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
----
+</div>
 
-## 🚀 Funcionalidades
+## ✨ **Recursos Principais**
 
-- Endpoint `/chat` para conversação
-- Uso de modelo LLM local pelo Ollama
-- Tool matemática que resolve expressões
-- Configuração via `.env`
-- Respostas rápidas via FastAPI + Uvicorn
-
----
-
-## 🧱 Requisitos
-
-- Python 3.10+
-- Ollama instalado
-- Modelo local (ex.: `llama3.1`)
+| Recurso | Descrição |
+|---------|-----------|
+| 🤖 **Agente Inteligente** | Processamento de linguagem natural com raciocínio contextual |
+| 🧮 **Ferramenta Matemática** | Resolução de expressões matemáticas complexas |
+| ⚡ **Baixa Latência** | Respostas rápidas via FastAPI + Uvicorn |
+| 🔧 **Extensível** | Arquitetura modular para adição de novas ferramentas |
+| 🔐 **Local & Privado** | Execução completa local sem dependência de APIs externas |
+| 🌐 **API FastAPI** | Interface padrão para integração com outros sistemas |
 
 ---
 
-## 📦 Instalação
+## 📋 **Índice**
 
-### 1. Instale o Ollama
-Baixe em: https://ollama.com
+- [🚀 Começando](#-começando)
+  - [Pré-requisitos](#pré-requisitos)
+  - [Instalação](#instalação)
+- [⚙️ Configuração](#️-configuração)
+- [🔧 Estrutura do Projeto](#-estrutura-do-projeto)
+- [📡 Uso da API](#-uso-da-api)
+  - [Endpoints Disponíveis](#endpoints-disponíveis)
+  - [Exemplos de Uso](#exemplos-de-uso)
+- [🛠️ Desenvolvimento](#️-desenvolvimento)
+  - [Adicionando Novas Ferramentas](#adicionando-novas-ferramentas)
+  - [Testes](#testes)
+- [🤝 Contribuindo](#-contribuindo)
+- [📄 Licença](#-licença)
 
-### 2. Baixe o modelo desejado
+---
+
+## 🚀 **Começando**
+
+### **Pré-requisitos**
+
+Antes de começar, certifique-se de ter instalado:
+
+- **Python 3.10 ou superior**
+- **Ollama** (para execução local de modelos LLM)
+- **Git** (para clonar o repositório)
+
+### **Instalação**
+
+#### 1. **Clone o repositório**
 ```bash
-ollama pull llama3.1
+git clone https://github.com/seu-usuario/ai-chat-api.git
+cd ai-chat-api
 ```
 
-## 📡 Uso do Endpoint /chat
+
+#### 2. **Instale o Ollama**
+  - Linux/macOS:
+  ```bash
+  curl -fsSL https://ollama.com/install.sh | sh
+  ```
+  - Windows: Baixe o instalador em [ollama.com](https://ollama.com)
+
+
+#### 3. **Baixe um modelo LLM**
+```bash
+# Recomendado para iniciar:
+ollama pull llama3.1:8b
+
+# Alternativas populares:
+# ollama pull mistral:7b
+# ollama pull qwen2.5:7b
+```
+
+#### 4. **Configure o ambiente python**
+```bash
+# Crie um ambiente virtual
+python -m venv venv
+
+# Ative o ambiente virtual
+# Linux/macOS:
+source venv/bin/activate
+# Windows:
+venv\Scripts\activate
+
+# Instale as dependências
+pip install -r requirements.txt
+```
+#### 5. **Configure as variáveis de ambiente**
+```bash
+# Copie o arquivo de exemplo
+cp .env.example .env
+
+# Edite o .env com suas configurações
+nano .env  # ou use seu editor preferido
+```
+
+
+
+
+## 📡 Uso do Endpoint /AgenteMath
 
 ### Requisição
 
 ```bash
-POST /chat
+POST /AgenteMath
 {
   "message": "Quanto é 20 * (3 + 2)?"
 }
@@ -69,4 +138,6 @@ POST /chat
 .env
 requirements.txt
 README.md
+.gitignore
+run_local.bat
 ```

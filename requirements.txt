@@ -1,6 +1,7 @@
-fastapi
-uvicorn
-python-dotenv
 strands-agents
 strands-agents-tools
+fastapi
+pydantic
+typing
+uvicorn
 ollama
